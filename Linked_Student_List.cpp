@@ -68,7 +68,17 @@ class LinkedList
         delete dptr;
         cout << "The Value " << m << "was deleted";
     }// End of Delete Node Function 
-  
+
+    void addNode(int num)
+    {
+        Node* n = new Node(num);
+        n-> next = head;
+        cout << num << "Added to list" << endl;
+
+    }
+    
+    
+
 
 
 
