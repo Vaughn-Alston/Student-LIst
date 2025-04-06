@@ -15,3 +15,22 @@ class Node
         next = nullptr;
     }
 }; // End of Node Class
+
+//Start of LinkedList Class
+class LinkedList
+{
+    private:
+    
+    Node*head;
+    public:
+    //constructor to initalize a empty list
+    LinkedList()
+    {
+        head = nullptr;
+    }
+
+    void setHead(Node*node)
+    {
+        head = node;
+    }
+};//End of LinkedList
