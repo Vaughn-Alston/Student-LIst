@@ -33,4 +33,25 @@ class LinkedList
     {
         head = node;
     }
+    void display()
+    {
+        Node* curr = head;
+
+        while(curr != nullptr)
+        {
+            cout << curr-> data << " ";
+            curr = curr->next;
+        }
+        cout << "Null" << endl;
+    }// end of display function
+
+    
+
+
+    
+
+
+
+
+
 };//End of LinkedList
