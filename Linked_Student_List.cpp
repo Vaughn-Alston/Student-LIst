@@ -3,18 +3,19 @@ using namespace std;
 
 // A linked list is a numer of values being connected by pointers.
 
-
+// 
 //Creating the Node Class.
 class Node
 {
     public:
     int data; // data and string are the two user variables 
-    
-
+    string name; 
     Node* next;
+
     //constructor to initialize node with data.
-    Node(int value)
+    Node(int value, string user)
     {
+        name = user;
         data = value;
         next = nullptr;
     }
@@ -39,10 +40,10 @@ class LinkedList
 
         while(curr != nullptr) // while not at the end of the list.
         {
-            cout << curr-> data 
-            << "    " << 
-        "\n--------------------\n"; //curr is at the head this line will read the int data inside.
+            cout << curr-> name << " (" << curr-> data << ") \n" ;
+             //curr is at the head this line will read the int data inside.
             curr = curr->next; // this line will curr = curr -> will read the data to the next of curr.
+
         }
         cout << "Null" << endl;
     }// end of display function
@@ -69,33 +70,25 @@ class LinkedList
         cout << "The Value " << m << "was deleted";
     }// End of Delete Node Function 
 
-    void addNode(int num)
-    {
-        Node* n = new Node(num);
-        n-> next = head; 
-        cout << num << "Added to list" << endl;
-
-    }
     //Appending function
-    void addAtEnd(int num)
-    {
-        Node* n = new Node(num); // new int num
-        n-> data = num;  
-        if(head == nullptr) //empty list
-        {
-            head = n;
-            n-> next = nullptr; // the value will become the head and the next value will be empty
-        }
-        else
-        {
-            Node* curr = head;
+    void addAtEnd(string name, int id){
+        
+       Node* n = new Node(name, id);
 
-            while(curr-> next != nullptr) // While curr not at the end of the list move to the next.
-            {
-                curr = curr-> next;
-            } // end of while loop
-            curr->next = n;
-        }// end of else statement
+       if (head == nullptr)
+       {
+        head = n;
+       } 
+       else{
+        Node* curr = head;
+        while(curr-> next != nullptr)
+        {
+            curr = curr->next;
+        }
+        curr->next = n;
+       }
+       cout << name << " (" << id << ") Added to list \n";
+
     } // end of at end function
 
     //find the size of Linkedlist
@@ -138,17 +131,15 @@ class LinkedList
 // my plan is to make my program user friendly prompting the user with 4 choices while stuck in a true loop untill they break
 //user will have a choice to 1 - display list, 2- remove student, 3- searchID, 4- addtoend. 5- exit;
 
+// I want to allow the user to define each ID with a Name.
 
 int main()
 {
     LinkedList list;
 
     //function variables
-    int search, remove, value;
-
-
-    //Driver Variables;// I want the user to be able to choose the size of their roster.
-    int choice, size;
+    int search, remove, value ,  choice, size;
+    string name;
 
 
  // size of linked list
@@ -164,9 +155,13 @@ int main()
     // adding to the linked list with the addAtEnd Function
     for(int i = 1; i <= size; i++)
     {
-        cout << "Enter Student " << i << ": ";
-        cin >> value;
-        list.addAtEnd(value);
+       cout << "Enter Student Name " << i << " : ";
+       cin >> name;
+       cout << "Enter Student ID " << i << " : ";
+       cin >> value;
+
+       list.addAtEnd(name, value);
+
     }
     
     
