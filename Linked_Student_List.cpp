@@ -13,9 +13,9 @@ class Node
     Node* next;
 
     //constructor to initialize node with data.
-    Node(int value, string user)
+    Node(string student, int value)
     {
-        name = user;
+        name = student;
         data = value;
         next = nullptr;
     }
@@ -27,6 +27,7 @@ class LinkedList
     private:
     
     Node*head;
+
     public:
     //constructor to initalize a empty list.
     LinkedList()
@@ -67,13 +68,14 @@ class LinkedList
 
         //if we exit the loop
         delete dptr;
-        cout << "The Value " << m << "was deleted";
+        cout << "Student with ID:  " << m << "was deleted";
     }// End of Delete Node Function 
 
     //Appending function
-    void addAtEnd(string name, int id){
-        
-       Node* n = new Node(name, id);
+    void addAtEnd(string student, int data)
+    {
+
+       Node* n = new Node(student, data);
 
        if (head == nullptr)
        {
@@ -87,7 +89,7 @@ class LinkedList
         }
         curr->next = n;
        }
-       cout << name << " (" << id << ") Added to list \n";
+       cout << student << " (" << data << ") Added to list \n";
 
     } // end of at end function
 
