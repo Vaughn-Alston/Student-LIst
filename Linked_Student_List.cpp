@@ -33,10 +33,6 @@ class LinkedList
         head = nullptr; // ensure the head is empty.
     }
 
-    void setHead(Node*node)
-    {
-        head = node; // Head is Literally Node.
-    }
     void display() 
     {
         Node* curr = head; // Node pointer curr = head.
@@ -144,8 +140,40 @@ class LinkedList
 int main()
 {
     LinkedList list;
-    int search, remove, choice; // for search and remove function
-    
+
+    //function variables
+    int search, remove, value;
+
+
+    //Driver Variables;// I want the user to be able to choose the size of their roster.
+    int choice, size;
+    //starting size of the linked list
+
+    cout << "Enter the Size of your class";
+    cin >> size;
+
+    if(size <= 0)
+    {
+        cout << "List size must be postive.\n";
+        return 0;
+    }
+
+    cout << "Enter the first Student ID[1234] :";
+    cin >> value;
+
+    Node* head = new Node(value);
+    Node* curr = head;
+
+    //increment after the first value
+    for(int i = 2; i <= size; i++)
+    {
+        cout << "Enter Student " << i << ": ";
+        cin >> value;
+
+       curr-> next = new Node(value);
+       curr = curr-> next;
+    }
+
     
 
     while(true)
@@ -155,10 +183,16 @@ int main()
                  "\n 2. Remove Student from List----\n"<<
                  "\n 3. Search Student ID----\n" <<
                  "\n 4. Add Student to end---- \n" << 
+                 "\n 5. Size of Class----\n" <<
                  "\n 5. Close Program----\n";
 
                  cout << "Select a Chocie";
                  cin >> choice;
+
+                 if(choice == 1.)
+                 {
+
+                 }
 
 
     }
