@@ -39,7 +39,9 @@ class LinkedList
 
         while(curr != nullptr) // while not at the end of the list.
         {
-            cout << curr-> data << " "; //curr is at the head this line will read the int data inside.
+            cout << curr-> data 
+            << "    " << 
+        "\n--------------------\n"; //curr is at the head this line will read the int data inside.
             curr = curr->next; // this line will curr = curr -> will read the data to the next of curr.
         }
         cout << "Null" << endl;
@@ -57,7 +59,7 @@ class LinkedList
             curr = curr-> next; //curr = curr point to the next node.
 
         }
-        if (curr = nullptr) //if we reach the  end of the list
+        if (curr == nullptr) //if we reach the  end of the list
         {
             cout << m << "not in list\n"; 
         }
@@ -147,9 +149,10 @@ int main()
 
     //Driver Variables;// I want the user to be able to choose the size of their roster.
     int choice, size;
-    //starting size of the linked list
 
-    cout << "Enter the Size of your class";
+
+ // size of linked list
+    cout << "Enter the Size of your class :";
     cin >> size;
 
     if(size <= 0)
@@ -158,40 +161,34 @@ int main()
         return 0;
     }
 
-    cout << "Enter the first Student ID[1234] :";
-    cin >> value;
-
-    Node* head = new Node(value);
-    Node* curr = head;
-
-    //increment after the first value
-    for(int i = 2; i <= size; i++)
+    // adding to the linked list with the addAtEnd Function
+    for(int i = 1; i <= size; i++)
     {
         cout << "Enter Student " << i << ": ";
         cin >> value;
-
-       curr-> next = new Node(value);
-       curr = curr-> next;
+        list.addAtEnd(value);
     }
-
+    
     
 
     while(true)
     {
-        cout << "<-------Student Directory------->\n"<<
-                 "\n 1. Display Student List----\n" <<
-                 "\n 2. Remove Student from List----\n"<<
-                 "\n 3. Search Student ID----\n" <<
-                 "\n 4. Add Student to end---- \n" << 
-                 "\n 5. Size of Class----\n" <<
-                 "\n 5. Close Program----\n";
+        cout << "\n\n<-------Student Directory------->\n"<<
+                 "\n 1. Display Student List\n" <<
+                 "\n 2. Remove Student from List\n"<<
+                 "\n 3. Search Student ID\n" <<
+                 "\n 4. Add Student to end\n" << 
+                 "\n 5. Size of Class\n" <<
+                 "\n 5. Close Program\n";
 
-                 cout << "Select a Chocie";
+                 cout << "\nSelect a Chocie :";
                  cin >> choice;
 
                  if(choice == 1.)
                  {
-
+                    cout << "Displaying Student Roster\n" <<
+                            "---------------------------\n";
+                    list.display();
                  }
 
 
