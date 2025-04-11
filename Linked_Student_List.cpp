@@ -148,6 +148,9 @@ int main()
     cout << "Enter the Size of your class :";
     cin >> size;
 
+
+    
+
     if(size <= 0)
     {
         cout << "List size must be postive.\n";
@@ -155,7 +158,7 @@ int main()
     }
 
     // adding to the linked list with the addAtEnd Function
-    for(int i = 1; i <= size; i++)
+    for(int i = 2; i <= size; i++)
     {
        cout << "Enter Student Name " << i << " : ";
        cin >> name;
@@ -181,11 +184,21 @@ int main()
                  cout << "\nSelect a Chocie :";
                  cin >> choice;
 
-                 if(choice == 1.)
+                 if(choice == 1)
                  {
                     cout << "Displaying Student Roster\n" <<
                             "---------------------------\n";
                     list.display();
+                 }  else if (choice ==  2) {
+                    
+
+                    } else if (choice == 3)
+                 {
+                    //The User has to use the users Student ID to remove, or search
+                    cout << "Enter ID to search : ";
+                    cin >> search;
+
+                    Node* head = list.searchLinkedlist(head , search);
                  }
 
 
