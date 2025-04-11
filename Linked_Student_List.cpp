@@ -8,7 +8,9 @@ using namespace std;
 class Node
 {
     public:
-    int data;
+    int data; // data and string are the two user variables 
+    
+
     Node* next;
     //constructor to initialize node with data.
     Node(int value)
@@ -112,12 +114,24 @@ class LinkedList
         }
         return count; // return size of the increment.
     }
+
+    //Search function for linked list
+
+    Node* searchLinkedlist(Node*head, int search)
+    {
+        Node* temp = head; // Start from the head of the node
     
-    
-
-
-
-
+    while( temp != nullptr)
+    {
+        if(temp-> data == search)
+        {
+            return temp; // return the node if target is found.
+        }
+        
+        temp = temp-> next; // if not found move to next Node
+    }
+    return nullptr; // return nohting if target not found
+    } // end of search function
 
 
 };//End of LinkedList
