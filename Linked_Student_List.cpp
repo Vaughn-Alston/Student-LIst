@@ -135,3 +135,33 @@ class LinkedList
 
 
 };//End of LinkedList
+
+//Starting the Driver Class
+// my plan is to make my program user friendly prompting the user with 4 choices while stuck in a true loop untill they break
+//user will have a choice to 1 - display list, 2- remove student, 3- searchID, 4- addtoend. 5- exit;
+
+
+int main()
+{
+    LinkedList list;
+    int search, remove, choice; // for search and remove function
+    
+    
+
+    while(true)
+    {
+        cout << "<-------Student Directory------->\n"<<
+                 "\n 1. Display Student List----\n" <<
+                 "\n 2. Remove Student from List----\n"<<
+                 "\n 3. Search Student ID----\n" <<
+                 "\n 4. Add Student to end---- \n" << 
+                 "\n 5. Close Program----\n";
+
+                 cout << "Select a Chocie";
+                 cin >> choice;
+
+
+    }
+
+
+}
