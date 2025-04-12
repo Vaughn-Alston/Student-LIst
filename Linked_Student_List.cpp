@@ -180,7 +180,7 @@ int main()
                  "\n 3. Search Student ID\n" <<
                  "\n 4. Add Student to end\n" << 
                  "\n 5. Size of Class\n" <<
-                 "\n 5. Close Program\n";
+                 "\n 6. Close Program\n";
 
                  cout << "\nSelect a Chocie :";
                  cin >> choice;
@@ -197,7 +197,7 @@ int main()
                     cin >> remove;
 
                 list.DeleteNode(remove);
-                continue;
+                
 
                 } 
                 else if (choice == 3)
