@@ -41,7 +41,8 @@ class LinkedList
 
         while(curr != nullptr) // while not at the end of the list.
         {
-            cout << curr-> name << " (" << curr-> data << ") \n" ;
+            cout << curr-> name << "Student ID : " << curr-> data << "\n "<<
+            "\n------------------------------------------------------\n";
              //curr is at the head this line will read the int data inside.
             curr = curr->next; // this line will curr = curr -> will read the data to the next of curr.
 
@@ -89,7 +90,7 @@ class LinkedList
         }
         curr->next = n;
        }
-       cout << student << " (" << data << ") Added to list \n";
+       cout << student << " (" << data << ") Added to list \n\n"; 
 
     } // end of at end function
 
@@ -158,7 +159,7 @@ int main()
     }
 
     // adding to the linked list with the addAtEnd Function
-    for(int i = 2; i <= size; i++)
+    for(int i = 1; i <= size; i++)
     {
        cout << "Enter Student Name " << i << " : ";
        cin >> name;
@@ -189,20 +190,56 @@ int main()
                     cout << "Displaying Student Roster\n" <<
                             "---------------------------\n";
                     list.display();
-                 }  else if (choice ==  2) {
-                    
+                 }  
+                else if (choice ==  2) 
+                {
+                    cout << "Enter ID to remove : ";
+                    cin >> remove;
 
-                    } else if (choice == 3)
+                list.DeleteNode(remove);
+                continue;
+
+                } 
+                else if (choice == 3)
+                {
+                //     //The User has to use the users Student ID to remove, or search
+                //     cout << "Enter ID to search : ";
+                //     cin >> search;
+
+                //    // Node* found = list.searchLinkedlist(search);
+                //     if (found)
+                //     {
+                //         cout << "Found: " << found->name << " (" << found-> data << ")\n";
+                //     }   
+                //     else 
+                //     {
+                //         cout << "ID NOT FOUND.\n";
+                //     }
+                       
+                 }
+                 else if (choice == 4)
                  {
-                    //The User has to use the users Student ID to remove, or search
-                    cout << "Enter ID to search : ";
-                    cin >> search;
-
-                    Node* head = list.searchLinkedlist(head , search);
+                    cout << "Enter Student Name : ";
+                    cin >> name;
+                    cout << "Enter Student ID : ";
+                    cin >> value;
+                    list.addAtEnd(name, value);
+                 }
+                 else if(choice == 5)
+                 {
+                    cout << "Current Class Size : " << list.getSize() << "\n";
+                 }
+                 else if(choice == 6)
+                 {
+                    cout << "Exiting Program. \n";
+                    break;
+                 }
+                 else {
+                    cout << "Invalid chocie. Try again. \n";
                  }
 
 
     }
-
+    return 0;
 
 }
