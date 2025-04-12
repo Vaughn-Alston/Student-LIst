@@ -52,24 +52,28 @@ class LinkedList
 
     void DeleteNode(int m)
     {
-        Node* dptr = nullptr; 
-        Node* temp = head; //temp node point to first value in list.
-        Node* curr = head; //curr node also points at the first value in the node.
-
-        while(curr != nullptr && curr->data != m) // Loop while curr not at the end of list and curr not equal to data.
+        Node* curr = head;  // cursor point to head of list.
+        Node* temp = nullptr; // temp points to nothing 
+        
+        
+        while(curr != nullptr && curr-> data != m)
         {
-            temp = curr; //temp node and curr are at the same position.
-            curr = curr-> next; //curr = curr point to the next node.
-
+            temp = curr;
+            curr = curr-> next;
         }
-        if (curr == nullptr) //if we reach the  end of the list
+        if(curr == nullptr)
         {
-            cout << m << "not in list\n"; 
+            cout << "Student ID:" << m << " not in list";
+            return;
         }
-
-        //if we exit the loop
-        delete dptr;
-        cout << "Student with ID:  " << m << "was deleted";
+        if(curr == head)
+        {
+            head = head-> next;
+        } else{
+            temp-> next = curr-> next;
+        }
+        delete curr;
+        cout << "\n Student with ID: " << m << " was deleted\n";
     }// End of Delete Node Function 
 
     //Appending function
