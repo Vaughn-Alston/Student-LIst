@@ -55,7 +55,7 @@ class LinkedList
         Node* curr = head;  // cursor point to head of list.
         Node* temp = nullptr; // temp points to nothing 
         
-        
+
         while(curr != nullptr && curr-> data != m)
         {
             temp = curr;
@@ -115,7 +115,7 @@ class LinkedList
 
     //Search function for linked list
 
-    Node* searchLinkedlist(Node*head, int search)
+    Node* searchLinkedlist(int search)
     {
         Node* temp = head; // Start from the head of the node
     
@@ -191,13 +191,13 @@ int main()
 
                  if(choice == 1)
                  {
-                    cout << "Displaying Student Roster\n" <<
+                    cout << "\nDisplaying Student Roster\n" <<
                             "---------------------------\n";
                     list.display();
                  }  
                 else if (choice ==  2) 
                 {
-                    cout << "Enter ID to remove : ";
+                    cout << "\nEnter ID to remove : ";
                     cin >> remove;
 
                 list.DeleteNode(remove);
@@ -206,26 +206,26 @@ int main()
                 } 
                 else if (choice == 3)
                 {
-                //     //The User has to use the users Student ID to remove, or search
-                //     cout << "Enter ID to search : ";
-                //     cin >> search;
+                    //The User has to use the users Student ID to remove, or search
+                    cout << "\nEnter ID to search : ";
+                    cin >> search;
 
-                //    // Node* found = list.searchLinkedlist(search);
-                //     if (found)
-                //     {
-                //         cout << "Found: " << found->name << " (" << found-> data << ")\n";
-                //     }   
-                //     else 
-                //     {
-                //         cout << "ID NOT FOUND.\n";
-                //     }
+                   Node* found = list.searchLinkedlist(search);
+                    if (found)
+                    {
+                        cout << "\nFound: " << found->name << " (" << found-> data << ")\n";
+                    }   
+                    else 
+                    {
+                        cout << "\nID NOT FOUND.\n";
+                    }
                        
                  }
                  else if (choice == 4)
                  {
-                    cout << "Enter Student Name : ";
+                    cout << "\nEnter Student Name : ";
                     cin >> name;
-                    cout << "Enter Student ID : ";
+                    cout << "\nEnter Student ID : ";
                     cin >> value;
                     list.addAtEnd(name, value);
                  }
@@ -235,11 +235,11 @@ int main()
                  }
                  else if(choice == 6)
                  {
-                    cout << "Exiting Program. \n";
+                    cout << "\nExiting Program. \n";
                     break;
                  }
                  else {
-                    cout << "Invalid chocie. Try again. \n";
+                    cout << "\nInvalid chocie. Try again. \n";
                  }
 
 
